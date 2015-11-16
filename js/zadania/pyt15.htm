@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 15</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body onload="startTimer()">
+
+<h1>Pytanie 15. Stwórz licznik wyświetlający dzień, miesiąc, rok, godzinę, minutę i sekundę, który będzie odliczał czas wstecz do określonego momentu, otworzy okno dialogowe z komunikatem tekstowym.</h1>
+
+
+<div id="licznik">
+    Tutaj będzie licznik
+</div>
+
+
+<script>
+
+    var startDate = new Date(2015, 11, 10, 12, 14, 2, 0);
+    var stopDate = new Date(2015, 11, 10, 12, 13, 0, 0);
+
+    Date.prototype.odejmijSekundy = function (sec) {
+        var dat = new Date(this.valueOf());
+        dat.setTime(dat.getTime() - sec * 1000);
+        return dat;
+    };
+
+    function countdown() {
+
+        if (startDate.getTime() > stopDate.getTime()) {
+            startDate = startDate.odejmijSekundy(1);
+            document.getElementById("licznik").innerHTML = startDate.getDay() + '.' + startDate.getMonth() + '.' + startDate.getFullYear() + ' ' + startDate.getHours() + ':' + startDate.getMinutes() + ':' + startDate.getSeconds();
+        } else {
+            document.getElementById("licznik").innerHTML = 'koniec';
+        }
+
+    }
+
+    function startTimer(duration) {
+        var timer = duration, minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            countdown();
+
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+
+
+</script>
+
+
+</body>
+
+</html>

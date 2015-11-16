@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 3</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <h1>Pytanie 3. Napisz program, który po kliknięciu przycisku, w warstwie o identyfikatorze "tekst" zmieni aktualny styl na taki, że najpierw tekst w warstwie zostanie pogrubiony, a po następnym kliknięciu przycisku zostanie przekreślony.</h1>
+
+    <button onclick="formatText()">Zmień styl</button>
+    <div id="tekst">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam faucibus eros sed sodales aliquam. Morbi vulputate leo at tincidunt euismod. Integer rhoncus tortor lacus, nec finibus velit laoreet fringilla. Aenean nibh enim, rhoncus nec venenatis id, luctus elementum risus. Nullam at efficitur turpis, et tincidunt urna. Aliquam consequat erat at vulputate commodo. Sed nec venenatis augue, a vestibulum felis. Donec eu neque sagittis, eleifend ligula id, tincidunt quam. Nullam vel massa a risus scelerisque convallis. Proin orci orci, faucibus et blandit at, luctus in justo.</p>
+
+    </div>
+
+
+    <script>
+        var licznik = 1;
+
+        function formatText() {
+            var e = document.getElementById("tekst");
+            if (licznik % 2 != 0) {
+                e.style.fontWeight = 'bold';
+            } else {
+                e.style.textDecoration = 'line-through';
+            }
+            licznik++;
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

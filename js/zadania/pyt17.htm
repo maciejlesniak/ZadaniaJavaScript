@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 17</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body onload="startTimer()">
+
+<h1>Pytanie 17. Napisz skrypt który generuje pytanie do użytkownika polegające na dodaniu dwóch losowo wybranych liczb i sprawdzeniu czy suma podana przez użytkownika jest prawidłowa (prosta wersja
+    captcha)</h1>
+
+Jaki jest wynik dodawania liczby <span id="l1"></span> oraz <span id="l2"></span>? Sumę wpisz w pole obok
+<input type="number" id="suma">
+<button onclick="czysiezgadza()">Podnieś do potęgi</button>
+<br><br>
+<div id="odpowiedz">
+    Tutaj będzie informacja czy się zgadza
+</div>
+
+
+<script>
+    function losuj() {
+        return Math.floor(Math.random() * 100);
+    }
+    var l1 = losuj();
+    var l2 = losuj();
+
+    document.getElementById("l1").innerHTML = l1.toString();
+    document.getElementById("l2").innerHTML = l2.toString();
+
+
+    function czysiezgadza() {
+        var wynik = Number(document.getElementById("suma").value);
+        if (wynik == l1 + l2) {
+            document.getElementById("odpowiedz").innerHTML = 'jest ok';
+        } else {
+            document.getElementById("odpowiedz").innerHTML = 'coś nie tak...';
+        }
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 11</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<h1>Pytanie 11. Napisz skrypt, który podzieli 2 liczby i zwróci zaokrągloną wartość całkowitą tego działania.</h1>
+
+<input type="number" id="liczba1">
+<input type="number" id="liczba2">
+<button onclick="dziel()">Podziel</button>
+<br>
+<br>
+
+<div id="odp">
+    Tutaj wyświetli się wynik
+</div>
+
+
+<script>
+    function dziel() {
+        var l1 = Number(document.getElementById("liczba1").value);
+        var l2 = Number(document.getElementById("liczba2").value);
+
+        document.getElementById("odp").innerHTML = Math.round(l1/l2).toString();
+    }
+</script>
+
+
+</body>
+
+</html>

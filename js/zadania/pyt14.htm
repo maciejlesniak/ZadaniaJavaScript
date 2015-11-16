@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 14</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<h1>Pytanie 14. Napisz program który umożliwi otwarcie nowego okna przeglądarki o rozmiarach i treści ustalonych przez użytkownika z polu tekstowym. Nowe okno ma się otwierać po kliknięciu w
+    przycisk.</h1>
+
+
+<input type="number" id="szer">
+<input type="number" id="wys">
+<button onclick="otworz()">Otwórz okno o zadanych rozmiarach</button>
+
+
+<script>
+    function otworz() {
+
+        var szer = Number(document.getElementById("szer").value);
+        var wys = Number(document.getElementById("wys").value);
+
+        window.open('http://www.wp.pl', 'nowe okno', 'width='+szer+', height='+wys);
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

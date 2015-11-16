@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 19</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body onload="pokaz()">
+
+<h1>Pytanie 19. Napisz skrypt który wyświetla wersję przeglądarki z której aktualnie korzysta użytkownik.</h1>
+
+
+<div id="wersja">
+    Tutaj będzie trzecia długość...
+</div>
+
+
+<script>
+
+    var txt = '<p>Browser CodeName: ' + navigator.appCodeName + '</p>';
+    txt+= '<p>Browser Name: ' + navigator.appName + '</p>';
+    txt+= '<p>Browser Version: ' + navigator.appVersion + '</p>';
+    txt+= '<p>Cookies Enabled: ' + navigator.cookieEnabled + '</p>';
+    txt+= '<p>Platform: ' + navigator.platform + '</p>';
+    txt+= '<p>User-agent header: ' + navigator.userAgent + '</p>';
+
+    function pokaz() {
+        document.getElementById('wersja').innerHTML = txt;
+    }
+</script>
+
+
+</body>
+</html>

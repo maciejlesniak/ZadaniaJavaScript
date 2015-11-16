@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 7</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<h1>Pytanie 7. Napisz program, który z bazy klientów zawierających dane: imię, nazwisko, miasto, oraz kod pocztowy, wypisze tylko tych, którzy określeni zostaną w formularzu przez jedną z tych zmiennych. Użyj do
+    tego prostej bazy danych opartej na tablicy.</h1>
+
+
+<input type="text" id="fraza">
+<button onclick="wyszukaj()">Szukaj</button>
+<br>
+<br>
+
+<div id="tekst">
+    Tutaj wyświetli się średnia suma trzech.
+</div>
+
+
+<script>
+
+    var baza = [
+        {
+            imie: 'Jan',
+            nazwisko: 'Kowalski',
+            miasto: 'Lublin',
+            kod: '20-555'
+        },
+        {
+            imie: 'Joanna',
+            nazwisko: 'Kot',
+            miasto: 'Włodawa',
+            kod: '22-200'
+        },
+        {
+            imie: 'Adam',
+            nazwisko: 'Rybka',
+            miasto: 'Warszawa',
+            kod: '00-664'
+        },
+        {
+            imie: 'Mateusz',
+            nazwisko: 'Krowa',
+            miasto: 'Chełm',
+            kod: '22-100'
+        }
+    ];
+
+    function wyszukaj() {
+        var fraza = document.getElementById("fraza").value;
+        var loopIndex = 0;
+        var odpowiedz = '';
+
+        while (loopIndex < baza.length) {
+            if (baza[loopIndex].imie == fraza || baza[loopIndex].nazwisko == fraza || baza[loopIndex].miasto == fraza || baza[loopIndex].kod == fraza) {
+                odpowiedz = 'imie i nazwisko: ' + baza[loopIndex].imie + ' ' + baza[loopIndex].nazwisko + ' kod pocztowy i miasto:' + baza[loopIndex].kod + ' ' + baza[loopIndex].miasto;
+            }
+            loopIndex++;
+        }
+
+        document.getElementById("tekst").innerHTML = odpowiedz;
+    }
+</script>
+
+
+</body>
+
+</html>

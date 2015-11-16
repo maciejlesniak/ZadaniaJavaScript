@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 21</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<h1>Pytanie 21. Napisz program, który wymusi na użytkowniku wpisanie hasła o określonej liczbie znaków. Jeśli liczba znaków będzie mniejsza niż zakładania, niech wyśowetli się alert: "za mała liczba
+    znaków". Sprawdzenie nich się odbywa po kliknięciu przycisku "sprawdź".</h1>
+
+
+<input type="password" id="passwd">
+<button onclick="spawdz()">Sprawdź</button>
+
+
+<script>
+    var minLiczbaZnakow = 5;
+    function spawdz() {
+        var p = document.getElementById('passwd').value;
+        if (p.length < 5) {
+            alert('za mała liczba znaków')
+        }
+    }
+</script>
+
+
+</body>
+</html>

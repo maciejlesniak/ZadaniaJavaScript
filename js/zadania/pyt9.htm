@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 9</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<h1>Pytanie 9. Napisz formularz, który będzie zawierał pole combo z nazwami zestawów komputerowych. Po wybraniu opcji z tego pola niech poniżej wyświetlą się w tabeli parametry tego zestawu i cena.</h1>
+
+<select id="zestawy" onchange="wyswietl()">
+    <option value="1">Dell Inspirion</option>
+    <option value="2">Assus Zenbook</option>
+    <option value="3">Asus Pro</option>
+    <option value="4">Asus NX500 JK</option>
+</select>
+<br>
+<br>
+
+<table>
+    <tr>
+        <td>Nazwa zestawu</td>
+        <td>Procesor</td>
+        <td>Rozdzielczość ekranu</td>
+        <td>Cena</td>
+    </tr>
+    <tr>
+        <td><span id="nazwa"></span></td>
+        <td><span id="procesor"></span></td>
+        <td><span id="rozdzielczosc"></span></td>
+        <td><span id="cena"></span></td>
+    </tr>
+</table>
+
+
+<script>
+
+    var baza = [
+        {
+            nazwa: 'Dell Inspirion',
+            procesor: 'Intel Core I5',
+            rozdzielczosc: '1920x1080',
+            cena: '3499 zł'
+        },
+        {
+            nazwa: 'Assus Zenbook',
+            procesor: 'Intel Core I7',
+            rozdzielczosc: '1920x1080',
+            cena: '3999 zł'
+        },
+        {
+            nazwa: 'Asus Pro',
+            procesor: 'Intel core i5',
+            rozdzielczosc: '1920x1080',
+            cena: '4100 zł'
+        },
+        {
+            nazwa: 'Asus NX500 JK',
+            procesor: 'Intel Core i7',
+            rozdzielczosc: '3840x2160',
+            cena: 'do negocjacji'
+        }
+    ];
+
+    function wyswietl() {
+        var zestawNum = document.getElementById("zestawy").value;
+
+        document.getElementById("nazwa").innerHTML = baza[zestawNum].nazwa;
+        document.getElementById("procesor").innerHTML = baza[zestawNum].procesor;
+        document.getElementById("rozdzielczosc").innerHTML = baza[zestawNum].rozdzielczosc;
+        document.getElementById("cena").innerHTML = baza[zestawNum].cena;
+    }
+</script>
+
+
+</body>
+
+</html>

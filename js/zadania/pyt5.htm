@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 5</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <h1>Pytanie 5. Napisz krótki program, który sumuje wszystkie liczby z zadanego zakresu</h1>
+
+
+
+
+    <input type="number" id="Start">
+    <input type="number" id="Stop">
+    <button onclick="suma()">Oblicz sumę</button>
+    <br>
+    <br>
+
+    <div id="tekst">
+        Tutaj wyświetli się suma zadanego zakresu.
+    </div>
+
+
+
+
+    <script>
+        function suma() {
+            var start = Number(document.getElementById("Start").value);
+            var stop = Number(document.getElementById("Stop").value);
+
+            var sumaLiczb = start;
+            while (start < stop) {
+                sumaLiczb += start + 1;
+                start++;
+            }
+
+            document.getElementById("tekst").innerHTML = sumaLiczb;
+        }
+
+    </script>
+    
+
+</body>
+
+</html>

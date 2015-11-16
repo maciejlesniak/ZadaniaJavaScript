@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 13</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<h1>Pytanie 13. Napisz skrypt umożliwiający wprowadzenie tekstu przez użytkownika oraz pozwalający na zmianę wszystkich wprowadzonych liter na małe lub wielkie w zależności od wybranej opcji po naciśnięciu przycisku "zmień". W skrypcie wykorzystaj element radio.</h1>
+
+
+<textarea rows="4" cols="50" id="tekst">
+tutaj wprowadz tekst
+</textarea>
+<br>
+<input type="radio" name="opcja" value="male" id="radioMale">Małe
+<br>
+<input type="radio" name="opcja" value="duze" id="radioDuze">Duże
+<br>
+<button onclick="wprowadzzmiany()">Zobacz wynik</button>
+<br>
+<br>
+
+<div id="odp">
+    Aktualna data
+</div>
+
+
+<script>
+    function wprowadzzmiany() {
+
+        var radios = document.getElementsByName('opcja');
+        var text = document.getElementById("tekst").value;
+
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+
+                document.getElementById("odp").innerHTML = text;
+                if (radios[i].value == 'male') {
+                    document.getElementById("odp").style.textTransform = 'lowercase';
+                }
+
+                if (radios[i].value == 'duze') {
+                    document.getElementById("odp").style.textTransform = 'uppercase';
+                }
+
+                break;
+            }
+        }
+
+    }
+</script>
+
+
+</body>
+
+</html>

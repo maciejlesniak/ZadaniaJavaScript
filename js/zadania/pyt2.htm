@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 2</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <h1>Pytanie 2. Napisz program, który po kliknięciu przycisku, w warstwie o identyfikatorze "czas" wstawi aktualny czas sformatowany w następujący sposób DD.MM.YYYY. Skorzystaj ze specyfikacji klasy Date</h1>
+
+
+    <div id="czas">
+       <p>Tutaj pojawi się czas: Kliknij w button powyżej</p> 
+        <button onclick="showTime()">Pokaż czas</button>
+    </div>
+
+
+    <script>
+        function showTime() {
+            var czas = new Date();
+            var dd = czas.getDay();
+            var mm = czas.getMonth();
+            var yyyy = czas.getFullYear();
+            var odpowiedz = dd + '.' + mm + '.' + yyyy;
+            var e = document.getElementById("czas");
+            e.innerHTML = odpowiedz;
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

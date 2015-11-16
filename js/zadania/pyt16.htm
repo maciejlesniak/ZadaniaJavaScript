@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 16</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body onload="startTimer()">
+
+<h1>Pytanie 16. Napisz funkcję podnoszącą liczbę do zadanej potęgi. Przy pisaniu skryptu skorzystaj z rekurencji.</h1>
+
+<input type="number" id="liczba">
+<input type="number" id="potega">
+<button onclick="dopotegi()">Podnieś do potęgi</button>
+<div id="wynik">
+    Tutaj będzie licznik
+</div>
+
+
+<script>
+    function potega(l, p) {
+        if (p == 0)
+            return 1;
+        else
+            return (l * potega(l, p - 1));
+    }
+
+
+    function dopotegi() {
+        var l = Number(document.getElementById("liczba").value);
+        var p = Number(document.getElementById("potega").value);
+        document.getElementById("wynik").innerHTML = potega(l, p).toString();
+    }
+</script>
+
+
+</body>
+</html>

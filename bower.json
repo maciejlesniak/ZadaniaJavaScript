@@ -1,0 +1,21 @@
+{
+  "name": "JavaScriptZadania",
+  "authors": [
+    "Maciej Leśniak <maciek@sparkmedia.pl>"
+  ],
+  "description": "Przykładowe problemy i ich rozwiązania za pomocą języka Java Script i HTML5",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "sparkmedia.pl",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

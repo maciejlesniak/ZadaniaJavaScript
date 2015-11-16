@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 20</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body onload="">
+
+<h1>Pytanie 20. Napisz program, który po kliknięciu przycisku przenosi użytkownika na wybraną stronę www</h1>
+
+<input type="text" id="www">
+<button onclick="przenies()">Przenieś mnie do tej strony</button>
+
+<script>
+    function przenies() {
+        var www = document.getElementById("www").value;
+        window.location.href = '//'+www;
+    }
+</script>
+
+
+</body>
+</html>

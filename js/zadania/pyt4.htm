@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 4</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<h1>Pytanie 4. Napisz program, który po wypełnieniu formularza posiadającego tylko pole "ilość znaków" i kliknięciu przycisku [Generuj] wyświetli z bazy tekst "Lorem ipsum" o długości znaków
+    określonej w formularzu. W przypadku, gdy użytkownik poda większą ilość znaków niż jest w dostępnym tekście ma się pojawić alert z odpowiednią informacją "Błąd, za duża liczba znaków lub za krótki
+    tekst w bazie"</h1>
+
+<input type="number" id="ilosc">
+<button onclick="LoremIpsum()">Generuj</button>
+<br>
+<br>
+
+<div id="tekst">
+    Tutaj wyświetli się tekst o zadanej długości.
+</div>
+
+
+<script>
+    var loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam faucibus eros sed sodales aliquam. Morbi vulputate leo at tincidunt euismod. Integer rhoncus tortor lacus, nec finibus velit laoreet fringilla. Aenean nibh enim, rhoncus nec venenatis id, luctus elementum risus. Nullam at efficitur turpis, et tincidunt urna. Aliquam consequat erat at vulputate commodo. Sed nec venenatis augue, a vestibulum felis. Donec eu neque sagittis, eleifend ligula id, tincidunt quam. Nullam vel massa a risus scelerisque convallis. Proin orci orci, faucibus et blandit at, luctus in justo.Quisque a semper metus. Quisque imperdiet metus non tempus maximus. Curabitur vulputate pulvinar eros, nec venenatis lorem aliquam id. Fusce tincidunt leo sit amet lorem consectetur, quis semper enim congue. Nunc blandit egestas lorem, eu accumsan eros ultricies sed. Duis efficitur ligula risus, ut ullamcorper felis consequat porttitor. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed iaculis magna ipsum, auctor bibendum augue facilisis porta. Etiam iaculis libero vitae lorem posuere, sed ultricies mi porttitor. Duis nec tellus vel neque scelerisque lobortis. Aenean sit amet erat nisi. Nulla at nulla sodales odio eleifend feugiat. Curabitur fermentum vitae tellus quis posuere. Aenean a tincidunt massa, id viverra tortor. Donec gravida magna imperdiet, sagittis lacus eu, volutpat massa. Fusce condimentum consequat sapien, ac rhoncus ex luctus et. Sed ut imperdiet augue, quis efficitur diam. Nulla vel imperdiet tortor, id imperdiet augue. Cras et pharetra augue, in sagittis nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus. In sit amet laoreet arcu. Nulla feugiat accumsan metus, nec egestas tortor viverra quis. Suspendisse scelerisque turpis quam, eget eleifend augue volutpat sit amet. Nam quis consequat libero. Phasellus ullamcorper massa eget est pharetra, sit amet eleifend ex malesuada. Ut vulputate velit nisl, consequat ornare odio cursus vel. Nam ex tortor, sagittis laoreet imperdiet nec, volutpat eu neque.Vivamus accumsan magna nibh, non placerat neque vulputate et. Nulla tempus lacus ac enim malesuada rhoncus. Sed ut felis at velit faucibus pellentesque. Aenean luctus tellus ac iaculis facilisis. Sed sit amet est ac diam porttitor sagittis non non ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum porta quam ac nibh aliquet pulvinar euismod in libero.';
+
+    function LoremIpsum() {
+        var ilosc = document.getElementById("ilosc").value;
+        if (ilosc >= loremIpsum.length) {
+            alert('Błąd, za duża liczba znaków lub zakrótki tekst w bazie');
+        } else {
+            var e = document.getElementById("tekst");
+            e.innerHTML = loremIpsum.substr(0, ilosc);
+        }
+    }
+
+</script>
+
+
+</body>
+
+</html>

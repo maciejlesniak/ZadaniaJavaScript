@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pytanie 6</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<h1>Pytanie 6. Napisz krótki program, który oblicz kwotę po zakończeniu lokaty na 12 m-cy przy oprocentowaniu rocznym 2,7 %. Przy założeniu, ze odsetki są naliczane co 1 m-c. A miesięczne
+    oprocentowanie to 1/12 oprocentowania rocznego. W obliczeniach pomiń podatek Belki. Skorzystaj w tym zadaniu z pętli for.</h1>
+
+
+<input type="number" id="kwota">
+<button onclick="oprocentowanie()">Oblicz oprocentowanie</button>
+<br>
+<br>
+
+<div id="tekst">
+    Tutaj wyświetli się średnia suma trzech.
+</div>
+
+
+<script>
+    function oprocentowanie() {
+        var kapital = Number(document.getElementById("kwota").value);
+        var mce = 12;
+        var oprocentowanie = (2.7 / 100) / 12;
+
+        for (var i = 1; i <= mce; i++) {
+            kapital += kapital * oprocentowanie;
+        }
+
+        document.getElementById("tekst").innerHTML = kapital;
+    }
+</script>
+
+
+</body>
+
+</html>
